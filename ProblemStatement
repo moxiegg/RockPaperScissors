@@ -1,0 +1,15 @@
+Game - Rock Paper Scissor :
+	General Overview - compare the selection from user and computer and declare the winner.
+		Rock > Scissor , Scissor > Paper , Paper > Rock!
+	Iteration 1:
+		1.Write a Function that returns random selection for {Rock,Paper,Scissor} - use it for computer's selection.
+			->Use Random function to return a value stored in the random index of an array.
+		2.Write a Function that gets selection as input from the user and returns it.
+			->Prompt the user for an input and return it.
+			->If it is invalid then return null.
+		3.Write a Function that uses the above the 2 functions and declares the winner.
+			->Compare the input parameters and return the winner(log it to the console for the first iteration alone.)
+			->If the user function has passed null then declare the computer as winner!.
+	Iteration 2:
+		1.Write a Function which does the job specified above for 5 times and keep track of the scores and declares the final
+		winner while also displaying each round's winner.
