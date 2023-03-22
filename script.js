@@ -1,9 +1,12 @@
 let choices = ["rock", "paper", "scissor"];
-function getUserInput() {
-  let input = prompt("Rock/Paper/Scissor?:");
-  input = input.toLowerCase();
-  if (input != "rock" && input != "scissor" && input != "paper") return null;
-  return input;
+function getUserInput(e) {
+  // rockInput = document.querySelector("#rock");
+  // rockInput.addEventListener('click',()=>console.log("Rock"));
+  // paperInput = document.querySelector("#paper");
+  // paperInput.addEventListener('click',()=>console.log("Paper"));
+  // scissorInput = document.querySelector("#scissor");
+  // scissorInput.addEventListener('click',()=>console.log("Scissor"));
+  game(e.target.id)
 }
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -34,19 +37,18 @@ function declareWinner(userInput, pcInput) {
     else return "PC";
   }
 }
-function game() {
-  let userWinCount = 0;
-  let pcWinCount = 0;
-  for (i = 0; i < 5; i++) {
-    let userInput = getUserInput();
-    let pcInput = getComputerInput();
-    let winner = declareWinner(userInput,pcInput);
-    if(winner=="User")userWinCount++;
-    if(winner=="PC")pcWinCount++;
-    console.log("Winner : "+winner);
-  }
-  if(userWinCount==pcWinCount)alert("The Game Ended in a DRAW!!");
-  else if(userWinCount>pcWinCount)alert("The User Emerged Victorious!");
-  else alert("The PC Emerged Victorious!")
+function game(userInput) {
+  let pcInput = getComputerInput();
+  let winner = declareWinner(userInput,pcInput);
+  if(winner=="User")userWinCount++;
+  if(winner=="PC")pcWinCount++;
+  console.log("Winner : "+winner);
+  if(userWinCount==5)alert("The User Won");
 }
-game();
+// game();
+//User Input
+let userWinCount = 0;
+let pcWinCount = 0;
+btn = document.querySelectorAll("button");
+btn.forEach((button)=>button.addEventListener('click',getUserInput));
+
